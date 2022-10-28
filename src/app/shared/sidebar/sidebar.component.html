@@ -1,0 +1,45 @@
+<!-- ************ SIDEBAR ************ -->
+<!--
+    * El sidebar tiene el objetivo de mostrar historial de búsquedas
+  -->
+<!-- p-3 => padding 3 px -->
+<div class='bg-dark border-right p-3'
+     id='sidebar'>
+  <h2 class='text-light'>Gifs-App</h2>
+  <br>
+  <h6 class='text-light'>by @SebasS 🥰</h6>
+
+  <hr class="text-white">
+
+  <!-- CONTENIDO DE SIDEBAR -->
+  <div *ngIf='historial.length > 1'>
+    <!-- MOSTRAR TODO CUANDO TENGAMOS ALGO EN HISTORIAL -->
+
+    <h6 class='text-light'>Historial de Búsqueda</h6>
+    <hr class="text-white">
+    <br>
+
+    <div class="list-group list-reset">
+      <a *ngFor='let item of historial'
+         href="#"
+         class='list-group-item lits-group-item-action'
+         (click)='buscar( item )'>
+
+        <!--
+          * hacemos uso de un pipe para mostrar en manera de título => titlecase
+          * pipe => solo manipula o transforma de forma VISUAL
+        -->
+        {{item | titlecase}}
+      </a>
+
+      <a href="#"
+         class='btn btn-primary'
+         (click)='clearHistory()'>Clear History</a>
+    </div>
+
+  </div>
+
+
+
+</div>
+<!-- ************ END OF SIDEBAR ************ -->

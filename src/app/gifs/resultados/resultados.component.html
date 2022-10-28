@@ -1,0 +1,31 @@
+<!-- PRESENTACIÓN DE RESULTADOS -->
+
+<!-- Presentación final -->
+
+<div class="row">
+  <!-- aquí aplicamos las animaciones de animate.style -->
+  <div *ngFor='let gif of resultados'
+       class="col-md-4 col-sm-6 animate__animated animate__fadeIn animate__slow">
+
+    <div class="card">
+      <!-- LA IMAGEN BUSCADA -->
+      <!--
+        * [ ] => para que angular asigne este valor a lo que estoy poniendo a la derecha
+      -->
+      <img [src]="gif.images.downsized_medium.url"
+           [alt]="gif.title"
+           class='card-img-top'>
+      <div class="card-body">
+        <p class='card-text'>
+
+          <!-- mostramos el título de la imagen -->
+          {{gif.title}}
+
+          <!-- solo de test para ubicar el path the imagen en objeto -->
+          <!-- {{gif.images.downsized_medium.url}} -->
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
